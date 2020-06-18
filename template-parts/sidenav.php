@@ -8,10 +8,10 @@ $currCategory = array_filter($allCategories, function ($c) {
 });
 $cid = $currCategory[0]->term_id;
 $page = get_page(get_the_ID());
-echo $page->post_name;
+echo var_dump($allCategories);
 ?>
 
-<div id="sideNav" data-pid="<?php echo get_the_ID(); ?>">
+<div id="sideNav" data-pid="<?php echo get_the_ID(); ?>" data-cid="<?php echo $cid; ?>">
     <ul>
         <?php
         foreach ($allCategories as $subcategory) {
