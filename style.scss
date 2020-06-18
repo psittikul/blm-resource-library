@@ -1,0 +1,22 @@
+@import "assets/scss/variables";
+body {
+    background-color: black;
+    color: white;
+    font-family: $body-font;
+}
+
+h1 {
+    font-family: $body-font;
+    color: white;
+}
+
+#pageTitle {
+    border-bottom: solid white;
+
+    text-align: center;
+    transition: 0.25s;
+    // &:hover {
+    //     color: $sunflower;
+    //     text-decoration: none;
+    // }
+}
