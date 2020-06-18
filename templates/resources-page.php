@@ -77,7 +77,7 @@ $curr = get_post(get_the_ID());
                 foreach ($posts as $resource) {
                 ?>
                     <div class="col mb-4">
-                        <a href="<?php echo get_field('resource_link', $resource->ID); ?>" target="_blank">
+                        <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
                             <div class="card resource-card">
                                 <?php
 
@@ -87,10 +87,25 @@ $curr = get_post(get_the_ID());
                                 <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
                                 <div class="card-body">
                                     <h5 class="card-title resource-name"><?php echo $resource->post_title; ?></h5>
-                                    <p class="card-text">
-                                        <?php echo $resource->post_content; ?>
-                                    </p>
+
+                                    <?php echo $resource->post_content; ?>
+
                                 </div>
+                                <?php
+                                if (strlen(get_field("author_source", $resource->ID)) > 1) {
+                                ?>
+                                    <div class="card-footer text-muted">
+                                        Author/Source: <?php echo get_field("author_source", $resource->ID); ?>
+                                    </div>
+                                <?php
+                                }
+                                if (strlen(get_the_tags()) > 0) {
+                                ?>
+                                    <div class="card-footer text-muted">
+                                        Tagged as: <?php echo get_the_tags(); ?>
+                                    </div>
+                                <?php
+                                } ?>
                             </div>
                         </a>
                     </div>

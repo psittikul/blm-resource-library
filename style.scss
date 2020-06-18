@@ -85,17 +85,17 @@ h3.section-title {
 
 #mainContainer {
     color: white;
-    a {
-        color: $sunflower;
-        text-decoration: underline;
-        transition: 0.25s;
-        &:hover {
-            text-decoration: none;
-            opacity: 0.75;
-        }
-    }
     p {
         font-size: large;
+        a {
+            color: $sunflower;
+            text-decoration: underline;
+            transition: 0.25s;
+            &:hover {
+                text-decoration: none;
+                opacity: 0.75;
+            }
+        }
     }
 }
 
@@ -145,11 +145,16 @@ h2#categoryTitle {
     }
 }
 
+a.card-link {
+    text-decoration: none;
+}
+
 .card.resource-card {
     color: black;
     .card-title.resource-name {
         color: black;
         text-align: center;
+        border-bottom: solid thin;
     }
 }
 

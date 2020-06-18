@@ -79,17 +79,17 @@ h3.section-title {
 #mainContainer {
   color: white;
 }
-#mainContainer a {
+#mainContainer p {
+  font-size: large;
+}
+#mainContainer p a {
   color: #e8d82a;
   text-decoration: underline;
   transition: 0.25s;
 }
-#mainContainer a:hover {
+#mainContainer p a:hover {
   text-decoration: none;
   opacity: 0.75;
-}
-#mainContainer p {
-  font-size: large;
 }
 
 /*
@@ -130,12 +130,17 @@ h2#categoryTitle {
   opacity: 1;
 }
 
+a.card-link {
+  text-decoration: none;
+}
+
 .card.resource-card {
   color: black;
 }
 .card.resource-card .card-title.resource-name {
   color: black;
   text-align: center;
+  border-bottom: solid thin;
 }
 
 .section-container {
