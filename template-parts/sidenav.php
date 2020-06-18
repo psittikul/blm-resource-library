@@ -14,20 +14,17 @@ $allCategories = get_categories();
             $curr = get_page(get_the_ID())->post_name;
             return $c->slug == $curr;
         });
-
-        $topID = $currCategory[0]->term_id;
+        $subcategories = array();
         foreach ($allCategories as $subcategory) {
-            // Only choose the subcategories of this current category page
-            if ($subcategory->parent == $topID) {
-        ?>
-                <a href="#<?php echo $subcategory->slug; ?>" data-supposed="<?php echo $cid; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
-                    <li><?php echo $subcategory->name; ?></li>
-                </a>
-        <?php
-            } else {
-                continue;
+            if ($subcategory->parent == $currCategory[0]->term_id) {
+                array_push($subcategories, $subcategory);
             }
         }
+        echo var_dump($subcategories);
         ?>
+        <!-- <a href="#<?php echo $subcategory->slug; ?>" data-supposed="<?php echo $cid; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
+                    <li><?php echo $subcategory->name; ?></li>
+                </a> -->
+        <?php        ?>
     </ul>
 </div>
