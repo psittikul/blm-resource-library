@@ -10,20 +10,20 @@ $allCategories = get_categories();
 
     <ul>
         <?php
-        $currCategory = array_filter($allCategories, function ($c) {
-            $curr = get_page(get_the_ID())->post_name;
-            return $c->slug == $curr;
-        });
-        echo var_dump($currCategory[0]);
-        // echo $currCategory[0]->term_id;
-        // $cid = $currCategory[0]->term_id;
+        $cid = 0;
+        foreach ($allCategories as $category) {
+            if ($category->slug == get_page(get_the_ID())->post_name) {
+                $cid = $category->term_id;
+            }
+        }
+        echo $cid;
         $subcategories = array();
-        // foreach ($allCategories as $subcategory) {
-        //     if ($subcategory->parent == $cid) {
-        //         array_push($subcategories, $subcategory);
-        //     }
-        // }
-        // echo var_dump($subcategories);
+        foreach ($allCategories as $subcategory) {
+            if ($subcategory->parent == $cid) {
+                array_push($subcategories, $subcategory);
+            }
+        }
+        echo var_dump($subcategories);
         ?>
         <!-- <a href="#<?php echo $subcategory->slug; ?>" data-supposed="<?php echo $cid; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
                     <li><?php echo $subcategory->name; ?></li>
