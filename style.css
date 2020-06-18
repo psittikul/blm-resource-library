@@ -9,10 +9,57 @@ h1 {
   color: white;
 }
 
+h3.section-title {
+  color: white;
+  font-family: "Oswald", sans-serif;
+  text-decoration: underline;
+  text-align: center;
+  text-decoration-color: #e8d82a;
+}
+
 #pageTitle {
   border-bottom: solid white;
+  font-weight: bold;
   text-align: center;
   transition: 0.25s;
+  margin: 0;
+}
+
+#topNav {
+  padding: 0;
+}
+#topNav ul {
+  margin: auto;
+}
+#topNav ul .nav-item {
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  transition: 0.25s;
+}
+#topNav ul .nav-item a {
+  color: inherit;
+  font-size: 1.25rem;
+}
+#topNav ul .nav-item.active {
+  color: #e8d82a;
+  font-weight: bold;
+}
+
+#sideNav {
+  max-width: 15%;
+}
+#sideNav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#sideNav ul li {
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+  background: #e8d82a;
+  color: white;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */

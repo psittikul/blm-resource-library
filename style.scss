@@ -10,13 +10,55 @@ h1 {
     color: white;
 }
 
+h3.section-title {
+    color: white;
+    font-family: $body-font;
+    text-decoration: underline;
+    text-align: center;
+    text-decoration-color: $sunflower;
+}
+
 #pageTitle {
     border-bottom: solid white;
-
+    font-weight: bold;
     text-align: center;
     transition: 0.25s;
-    // &:hover {
-    //     color: $sunflower;
-    //     text-decoration: none;
-    // }
+    margin: 0;
+}
+
+#topNav {
+    padding: 0;
+    ul {
+        margin: auto;
+        .nav-item {
+            text-transform: uppercase;
+            font-family: $body-font;
+            color: white;
+            transition: 0.25s;
+            a {
+                color: inherit;
+                font-size: 1.25rem;
+            }
+            &.active {
+                color: $sunflower;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#sideNav {
+    max-width: 15%;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            padding: 0.25rem;
+            margin-bottom: 0.25rem;
+            background: $sunflower;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
 }

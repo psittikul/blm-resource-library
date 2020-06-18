@@ -1,5 +1,9 @@
 <?php
+
 /**
+ * /**
+ * Template Name: Home Template
+ * Template Post Type: page
  * Home page template file
  *
  *
@@ -13,8 +17,8 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-<h1>Test</h1>
-
+    <h3 class="section-title">LATEST UPDATES</h3>
+    <!-- TO-DO: Code to show latest resource additions/what I've shared here -->
 </main><!-- #site-content -->
 
 
