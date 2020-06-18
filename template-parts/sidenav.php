@@ -8,7 +8,7 @@ $currCategory = array_filter($allCategories, function ($c) {
 });
 $cid = $currCategory[0]->term_id;
 ?>
-<div id="sideNav">
+<div id="sideNav" data-pid="<?php echo $cid; ?>">
     <ul>
         <?php
         foreach ($allCategories as $subcategory) {
