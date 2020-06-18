@@ -15,7 +15,7 @@
 <html class="no-js" <?php language_attributes(); ?>>
 
 <head>
-	<title>BLM Resources</title>
+	<title>Resource Library - BLM</title>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="<?php echo get_bloginfo('template_directory'); ?>/assets/favicon.ico">
@@ -29,7 +29,7 @@
 
 <body>
 	<!-- Top nav here -->
-	<h1 id="pageTitle">RESOURCE LIBRARY - BLM</h1>
+		<h1 id="pageTitle"><a href="/" >RESOURCE LIBRARY - BLACK LIVES MATTER MOVEMENT</a></h1>
 	<nav class="navbar navbar-expand-lg" id="topNav">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>

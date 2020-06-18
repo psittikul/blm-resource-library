@@ -24,9 +24,15 @@ h3.section-title {
   transition: 0.25s;
   margin: 0;
 }
+#pageTitle a {
+  color: white;
+  text-decoration: none;
+}
 
 #topNav {
   padding: 0;
+  border-bottom: double white;
+  margin-bottom: 0.5rem;
 }
 #topNav ul {
   margin: auto;
@@ -41,9 +47,8 @@ h3.section-title {
   color: inherit;
   font-size: 1.25rem;
 }
-#topNav ul .nav-item.active {
+#topNav ul .nav-item:hover {
   color: #e8d82a;
-  font-weight: bold;
 }
 
 #sideNav {
@@ -54,12 +59,87 @@ h3.section-title {
   margin: 0;
   padding: 0;
 }
+#sideNav ul a {
+  text-decoration: none;
+}
 #sideNav ul li {
   padding: 0.25rem;
   margin-bottom: 0.25rem;
   background: #e8d82a;
   color: white;
   text-transform: uppercase;
+  transition: 0.25s;
+}
+#sideNav ul li:hover {
+  background: white;
+  color: #e8d82a;
+  transform: translateX(1rem);
+}
+
+#mainContainer {
+  color: white;
+}
+#mainContainer a {
+  color: #e8d82a;
+  text-decoration: underline;
+  transition: 0.25s;
+}
+#mainContainer a:hover {
+  text-decoration: none;
+  opacity: 0.75;
+}
+#mainContainer p {
+  font-size: large;
+}
+
+/*
+Resource category page styles
+*/
+h2#categoryTitle {
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: solid thin #e8d82a;
+  margin: 0;
+}
+
+#categoryNav.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+}
+
+#categoryNavMenu {
+  background: rgba(255, 255, 255, 0.5);
+}
+#categoryNavMenu #categoryNavMenuContent ul {
+  margin: auto;
+}
+#categoryNavMenu #categoryNavMenuContent ul li {
+  margin-right: 1rem;
+  text-transform: uppercase;
+  color: white;
+}
+#categoryNavMenu #categoryNavMenuContent ul li:hover {
+  color: #e8d82a;
+  opacity: 1;
+}
+#categoryNavMenu #categoryNavMenuContent ul li a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 1;
+}
+
+.card.resource-card {
+  color: black;
+}
+.card.resource-card .card-title.resource-name {
+  color: black;
+  text-align: center;
+}
+
+.section-container {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

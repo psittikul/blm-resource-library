@@ -24,10 +24,16 @@ h3.section-title {
     text-align: center;
     transition: 0.25s;
     margin: 0;
+    a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 #topNav {
     padding: 0;
+    border-bottom: double white;
+    margin-bottom: 0.5rem;
     ul {
         margin: auto;
         .nav-item {
@@ -39,10 +45,14 @@ h3.section-title {
                 color: inherit;
                 font-size: 1.25rem;
             }
-            &.active {
+            &:hover {
                 color: $sunflower;
-                font-weight: bold;
             }
+            // &.active {
+            //     a {
+            //         text-decoration: underline $sunflower;
+            //     }
+            // }
         }
     }
 }
@@ -53,12 +63,96 @@ h3.section-title {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        a {
+            text-decoration: none;
+        }
         li {
             padding: 0.25rem;
             margin-bottom: 0.25rem;
             background: $sunflower;
             color: white;
             text-transform: uppercase;
+            transition: 0.25s;
+            &:hover {
+                // opacity: 0.75;
+                background: white;
+                color: $sunflower;
+                transform: translateX(1rem);
+            }
         }
     }
+}
+
+#mainContainer {
+    color: white;
+    a {
+        color: $sunflower;
+        text-decoration: underline;
+        transition: 0.25s;
+        &:hover {
+            text-decoration: none;
+            opacity: 0.75;
+        }
+    }
+    p {
+        font-size: large;
+    }
+}
+
+/*
+Resource category page styles
+*/
+
+h2#categoryTitle {
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: solid thin $sunflower;
+    margin: 0;
+}
+
+#categoryNav {
+    &.sticky {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+        // & + .section-container:first-of-type {
+        //     padding-top: 60px;
+        // }
+    }
+}
+
+#categoryNavMenu {
+    background: rgba(255, 255, 255, 0.5);
+    #categoryNavMenuContent {
+        ul {
+            margin: auto;
+            li {
+                margin-right: 1rem;
+                text-transform: uppercase;
+                color: white;
+                &:hover {
+                    color: $sunflower;
+                    opacity: 1;
+                }
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.card.resource-card {
+    color: black;
+    .card-title.resource-name {
+        color: black;
+        text-align: center;
+    }
+}
+
+.section-container {
+    margin-top: 1rem;
 }

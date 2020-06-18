@@ -22,7 +22,7 @@ $allCategories = get_categories();
         foreach ($allCategories as $subcategory) {
             if ($subcategory->parent == $cid) {
         ?>
-                <a href="#<?php echo $subcategory->slug; ?>">
+                <a href="#<?php echo $subcategory->slug; ?>" data-toggle="tooltip" title="Jump to <?php echo $subcategory->name;?> section">
                     <li><?php echo $subcategory->name; ?></li>
                 </a>
         <?php

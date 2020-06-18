@@ -16,10 +16,15 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
-    <h3 class="section-title">LATEST UPDATES</h3>
-    <!-- TO-DO: Code to show latest resource additions/what I've shared here -->
-</main><!-- #site-content -->
+<!-- <main id="site-content" role="main"> -->
+<div class="container-fluid" id="mainContainer">
+    <!-- Disclaimer/description of home page (id=30) (edited on the "Home" page in WordPress dashboard) -->
+    <?php
+    $home = get_page(30);
+    echo $home->post_content;
+    ?>
+</div>
+<!-- </main> -->
 
 
 <?php
