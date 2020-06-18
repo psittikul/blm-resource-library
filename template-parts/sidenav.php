@@ -16,6 +16,7 @@ $cid = $currCategory[0]->term_id;
     <ul>
         <?php
         foreach ($allCategories as $subcategory) {
+            echo "CID: $subcategory->term_id";
             // Only choose the subcategories of this current category page
             if ($subcategory->parent == $cid) {
         ?>
