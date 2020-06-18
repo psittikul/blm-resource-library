@@ -10,24 +10,26 @@ $allCategories = get_categories();
 
     <ul>
         <?php
+        /**
+         * TO-DO: More efficient way of doing this lol
+         */
         $cid = 0;
         foreach ($allCategories as $category) {
             if ($category->slug == get_page(get_the_ID())->post_name) {
                 $cid = $category->term_id;
             }
         }
-        echo $cid;
-        $subcategories = array();
         foreach ($allCategories as $subcategory) {
             if ($subcategory->parent == $cid) {
-                array_push($subcategories, $subcategory);
+        ?>
+                <a href="#<?php echo $subcategory->slug; ?>">
+                    <li><?php echo $subcategory->name; ?></li>
+                </a>
+        <?php
+            } else {
+                continue;
             }
         }
-        echo var_dump($subcategories);
         ?>
-        <!-- <a href="#<?php echo $subcategory->slug; ?>" data-supposed="<?php echo $cid; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
-                    <li><?php echo $subcategory->name; ?></li>
-                </a> -->
-        <?php        ?>
     </ul>
 </div>
