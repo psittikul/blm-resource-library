@@ -17,9 +17,9 @@ $cid = $currCategory[0]->term_id;
         <?php
         foreach ($allCategories as $subcategory) {
             // Only choose the subcategories of this current category page
-            if ($subcategory->parent == $cid) {
+            if ($subcategory->parent == 5) {
         ?>
-                <a href="#<?php echo $subcategory->slug; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
+                <a href="#<?php echo $subcategory->slug; ?>" data-supposed="<?php echo $cid; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
                     <li><?php echo $subcategory->name; ?></li>
                 </a>
         <?php
