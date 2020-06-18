@@ -15,7 +15,7 @@ $allCategories = get_categories();
             return $c->slug == $curr;
         });
         echo var_dump($currCategory[0]);
-        echo $currCategory[0]->term_id;
+        // echo $currCategory[0]->term_id;
         // $cid = $currCategory[0]->term_id;
         $subcategories = array();
         // foreach ($allCategories as $subcategory) {
