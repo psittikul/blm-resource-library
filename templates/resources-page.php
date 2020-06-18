@@ -99,10 +99,18 @@ $curr = get_post(get_the_ID());
                                     </div>
                                 <?php
                                 }
-                                if (get_the_tags()) {
+                                if (get_the_tags($resource->ID)) {
                                 ?>
                                     <div class="card-footer text-muted">
-                                        Tagged as: <?php echo get_the_tags(); ?>
+                                        Tagged as:
+                                        <?php
+                                        $tagArray = get_the_tags($resource->ID);
+                                        $tagNames = array();
+                                        foreach ($tagArray as $tag) {
+                                            array_push($tagNames, $tag->name);
+                                        }
+                                        echo implode(", ", $tagNames);
+                                        ?>
                                     </div>
                                 <?php
                                 } ?>
