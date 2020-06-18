@@ -14,9 +14,11 @@ $allCategories = get_categories();
             $curr = get_page(get_the_ID())->post_name;
             return $c->slug == $curr;
         });
+        $cid = $currCategory[0]->term_id;
+        echo "<h4>$cid</h4>";
         $subcategories = array();
         foreach ($allCategories as $subcategory) {
-            if ($subcategory->parent == $currCategory[0]->term_id) {
+            if ($subcategory->parent == $cid) {
                 array_push($subcategories, $subcategory);
             }
         }
