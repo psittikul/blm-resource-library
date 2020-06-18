@@ -7,11 +7,12 @@ $currCategory = array_filter($allCategories, function ($c) {
     return $c->slug == $curr;
 });
 $cid = $currCategory[0]->term_id;
-$page = get_page(get_the_ID());
-echo var_dump($allCategories);
+
 ?>
 
-<div id="sideNav" data-pid="<?php echo get_the_ID(); ?>" data-cid="<?php echo $cid; ?>">
+<div id="sideNav" data-pid="<?php echo get_the_ID(); ?>">
+    <?php echo var_dump($allCategories); ?>
+
     <ul>
         <?php
         foreach ($allCategories as $subcategory) {
