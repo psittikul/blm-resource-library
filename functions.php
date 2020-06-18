@@ -246,9 +246,10 @@ function resource_post_type()
 		'label'               => __('resources'),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
-		'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail','revisions', 'custom-fields',),
+		'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields',),
 		// You can associate this CPT with a taxonomy or custom taxonomy. 
 		// 'taxonomies'          => array('genres'),
+		'taxonomies' => array('post_tag', 'category'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
