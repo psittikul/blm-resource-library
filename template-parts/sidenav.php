@@ -14,7 +14,8 @@ $allCategories = get_categories();
             $curr = get_page(get_the_ID())->post_name;
             return $c->slug == $curr;
         });
-        echo var_dump($currCategory);
+        echo var_dump($currCategory[0]);
+        echo $currCategory[0]->term_id;
         // $cid = $currCategory[0]->term_id;
         $subcategories = array();
         // foreach ($allCategories as $subcategory) {
