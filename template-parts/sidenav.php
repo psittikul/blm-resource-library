@@ -12,20 +12,20 @@ $cid = $currCategory[0]->term_id;
 ?>
 
 <div id="sideNav">
-    <?php
-    echo var_dump($currCategory); ?>
 
     <ul>
         <?php
         foreach ($allCategories as $subcategory) {
             // Only choose the subcategories of this current category page
-            // if ($subcategory->parent == $cid) {
+            if ($subcategory->parent == $cid) {
         ?>
-            <a href="#<?php echo $subcategory->slug; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
-                <li><?php echo $subcategory->name; ?></li>
-            </a>
+                <a href="#<?php echo $subcategory->slug; ?>" data-pid="<?php echo $subcategory->parent; ?>" data-cid="<?php echo $subcategory->term_id; ?>">
+                    <li><?php echo $subcategory->name; ?></li>
+                </a>
         <?php
-            // }
+            } else {
+                continue;
+            }
         }
         ?>
     </ul>
