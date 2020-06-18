@@ -99,7 +99,7 @@ $curr = get_post(get_the_ID());
                                     </div>
                                 <?php
                                 }
-                                if (strlen(get_the_tags()) > 0) {
+                                if (get_the_tags()) {
                                 ?>
                                     <div class="card-footer text-muted">
                                         Tagged as: <?php echo get_the_tags(); ?>
