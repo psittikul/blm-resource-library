@@ -10,12 +10,12 @@ $allCategories = get_categories();
 
     <ul>
         <?php
-        // $currCategory = array_filter($allCategories, function ($c) {
-        //     $curr = get_page(get_the_ID())->post_name;
-        //     return $c->slug == $curr;
-        // });
+        $currCategory = array_filter($allCategories, function ($c) {
+            $curr = get_page(get_the_ID())->post_name;
+            return $c->slug == $curr;
+        });
+        echo var_dump($currCategory);
         // $cid = $currCategory[0]->term_id;
-        echo get_page(get_the_ID())->post_name;
         $subcategories = array();
         // foreach ($allCategories as $subcategory) {
         //     if ($subcategory->parent == $cid) {
