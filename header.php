@@ -29,7 +29,7 @@
 
 <body>
 	<!-- Top nav here -->
-		<h1 id="pageTitle"><a href="/" >RESOURCE LIBRARY: BLACK LIVES MATTER MOVEMENT</a></h1>
+	<h1 id="pageTitle"><a href="/">FIREBRAND RESOURCE LIBRARY: BLACK LIVES MATTER MOVEMENT</a></h1>
 	<nav class="navbar navbar-expand-lg navbar-dark" id="topNav">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -42,7 +42,8 @@
 				$allPages = get_pages(
 					array(
 						"sort_column" => "menu_order",
-						"sort_order" => "ASC"
+						"sort_order" => "ASC",
+						"exclude" => array(30)
 					)
 				);
 				foreach ($allPages as $page) {
