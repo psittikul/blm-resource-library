@@ -4,6 +4,8 @@ Change card display on mobile
 @media only screen and (max-width: 576px) {
     .card.resource-card .card-meat {
         display: inline-flex;
+        max-height: 10rem;
+        overflow: auto;
         .card-img-container {
             width: 35%;
             border-bottom: none;
