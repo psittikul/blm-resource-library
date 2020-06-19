@@ -158,7 +158,7 @@ a.card-link {
 }
 .card.resource-card .card-meat {
   max-height: 32rem;
-  overflow: auto;
+  overflow: hidden;
 }
 .card.resource-card .card-img-container {
   display: flex;
