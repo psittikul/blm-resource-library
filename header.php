@@ -32,7 +32,24 @@
 	<h1 id="pageTitle"><a href="/">FIREBRAND RESOURCE LIBRARY: BLACK LIVES MATTER MOVEMENT</a></h1>
 	<nav class="navbar navbar-expand-lg navbar-dark" id="topNav">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+
+			<?php
+			/**
+			 * If this is the home page, show regular menu icon thing
+			 */
+			if (is_home()) {
+			?>
+				GO TO PAGE <i class="fas fa-caret-down"></i>
+			<?php
+			}
+			/**
+			 * If this page is NOT the home page, display its name as the mobile nav button
+			 */
+			if (!is_home()) {
+				$page = get_page(get_the_ID());
+				echo $page->post_title . ' <i class="fas fa-caret-down"></i>';
+			}
+			?>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">

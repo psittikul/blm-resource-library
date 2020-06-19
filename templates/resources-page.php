@@ -18,7 +18,6 @@ $curr = get_post(get_the_ID());
 ?>
 
 <div class="container-fluid" id="mainContainer">
-    <a id="top"></a>
     <?php
     $allCategories = get_categories();
     $subcategories = array();
@@ -37,22 +36,25 @@ $curr = get_post(get_the_ID());
         }
     }
     ?>
-    <!-- Create a dropdown menu that will function as a header that changes according to the title of the section it's in,
-that also allows user to jump to other sections-->
-    <button class="btn btn-secondary dropdown-toggle section-dropdown-btn" type="button" id="sectionNavBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-container="<?php echo $subcategories[0]->term_id; ?>" style="display:none">
-        <?php
-        // Start off with the top section name???
-        echo $subcategories[0]->name; ?>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="sectionNavBtn" data-btn="sectionNavBtn">
-        <?php
-        foreach ($subcategories as $option) {
-        ?>
-            <a class="dropdown-item section-option" data-opt-id="<?php echo $option->term_id; ?>" href="#<?php echo $option->slug; ?>"><?php echo $option->name; ?></a>
-        <?php
-        }
-        ?>
+    <div id="sideNav">
 
+        <ul id="subcategoryMenu">
+            <li class="subcategory" id="toggleSide">
+                <button type="button" id="toggleSideNavBtn" data-toggle="tooltip" title="Minimize menu" data-mode="hide">
+                    <i data-dir="left" class="fas fa-angle-double-left"></i>
+                    <i data-dir="right" class="fas fa-bars"></i>
+                </button>
+            </li>
+            <?php
+            foreach ($subcategories as $option) {
+            ?>
+                <li class="subcategory" data-id="<?php echo $option->term_id; ?>"><a href="#<?php echo $option->slug; ?>"><?php echo $option->name; ?></a>
+                <?php
+            }
+                ?>
+                <!-- Add a "back to top" option -->
+                <li class="subcategory" id="backToTop">Back to Top</li>
+        </ul>
     </div>
     <?php
     // Now go through each subcategory and get all of its resources
