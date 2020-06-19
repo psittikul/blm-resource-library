@@ -15,14 +15,14 @@
 <html class="no-js" <?php language_attributes(); ?>>
 
 <head>
-	<title>Resource Library - BLM</title>
+	<title>Firebrand Resource Library</title>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="<?php echo get_bloginfo('template_directory'); ?>/assets/favicon.ico">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<script src="https://kit.fontawesome.com/8819ef24c8.js" crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
 
 </head>

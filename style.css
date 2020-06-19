@@ -51,7 +51,7 @@ h1 {
   color: white;
 }
 
-h3.section-title {
+h4.section-title {
   color: white;
   font-family: "Oswald", sans-serif;
   text-decoration: underline;
@@ -188,10 +188,6 @@ a.card-link {
 }
 .card.resource-card .card-footer .tags {
   font-size: 60%;
-}
-
-.section-container {
-  margin-top: 1rem;
 }
 
 #sectionNavBtn {

@@ -59,7 +59,7 @@ that also allows user to jump to other sections-->
     foreach ($subcategories as $section) {
     ?>
         <div class="section-container" data-tid="<?php echo $section->term_id; ?>" id="<?php echo $section->slug; ?>">
-            <h3 class="section-title"><?php echo $section->name; ?></h3>
+            <h4 class="section-title"><?php echo $section->name; ?></h4>
             <div class="row row-cols-1 row-cols-sm-4">
                 <?php
                 $args = array(
