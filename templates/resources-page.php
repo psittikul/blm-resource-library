@@ -18,53 +18,49 @@ $curr = get_post(get_the_ID());
 ?>
 
 <div class="container-fluid" id="mainContainer">
-    <!-- Instead of sticky side nav, sticky second top nav??? -->
-    <div id="categoryNav">
-        <h2 id="categoryTitle"><?php echo get_the_title($curr); ?></h2>
-        <nav class="navbar navbar-expand-lg" id="categoryNavMenu">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#categoryNavMenuContent" aria-controls="categoryNavMenuContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <a id="top"></a>
+    <?php
+    $allCategories = get_categories();
+    $subcategories = array();
+    $cid = -1;
+    foreach ($allCategories as $category) {
+        if ($category->slug == get_page(get_the_ID())->post_name) {
+            $cid = $category->term_id;
+        }
+    }
+    foreach ($allCategories as $subcategory) {
+        if ($subcategory->parent == $cid) {
+            // Push to an array we can reference later
+            array_push($subcategories, $subcategory);
+        } else {
+            continue;
+        }
+    }
+    ?>
+    <!-- Create a dropdown menu that will function as a header that changes according to the title of the section it's in,
+that also allows user to jump to other sections-->
+    <button class="btn btn-secondary dropdown-toggle section-dropdown-btn" type="button" id="sectionNavBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-container="<?php echo $subcategories[0]->term_id; ?>" style="display:none">
+        <?php
+        // Start off with the top section name???
+        echo $subcategories[0]->name; ?>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="sectionNavBtn" data-btn="sectionNavBtn">
+        <?php
+        foreach ($subcategories as $option) {
+        ?>
+            <a class="dropdown-item section-option" data-opt-id="<?php echo $option->term_id; ?>" href="#<?php echo $option->slug; ?>"><?php echo $option->name; ?></a>
+        <?php
+        }
+        ?>
 
-            <div class="collapse navbar-collapse" id="categoryNavMenuContent">
-                <ul class="navbar-nav mr-auto">
-                    <?php
-                    $allCategories = get_categories();
-                    $subcategories = array();
-                    $cid = -1;
-                    foreach ($allCategories as $category) {
-                        if ($category->slug == get_page(get_the_ID())->post_name) {
-                            $cid = $category->term_id;
-                        }
-                    }
-                    foreach ($allCategories as $subcategory) {
-                        if ($subcategory->parent == $cid) {
-                            // Push to an array we can reference later
-                            array_push($subcategories, $subcategory);
-                    ?>
-                            <li>
-                                <a href="#<?php echo $subcategory->slug; ?>" data-cid="<?php echo $subcategory->term_id; ?>" data-toggle="tooltip" title="Jump to <?php echo $subcategory->name; ?> section">
-                                    <?php echo $subcategory->name; ?>
-                                </a>
-                            </li>
-                    <?php
-                        } else {
-                            continue;
-                        }
-                    }
-                    ?>
-                </ul>
-            </div>
-        </nav>
     </div>
     <?php
     // Now go through each subcategory and get all of its resources
     foreach ($subcategories as $section) {
-        // Add a lil div or something to use as an anchor
     ?>
-        <div class="section-container" id="<?php echo $section->slug; ?>">
-
-            <div class="row row-cols-1 row-cols-md-3">
+        <div class="section-container" data-tid="<?php echo $section->term_id; ?>" id="<?php echo $section->slug; ?>">
+            <h3 class="section-title"><?php echo $section->name; ?></h3>
+            <div class="row row-cols-1 row-cols-sm-4">
                 <?php
                 $args = array(
                     'post_type' => 'resources',
@@ -84,33 +80,38 @@ $curr = get_post(get_the_ID());
                                 $thumbnail_id = get_post_thumbnail_id($resource->ID);
                                 $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
                                 ?>
-                                <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
-                                <div class="card-body">
-                                    <h5 class="card-title resource-name"><?php echo $resource->post_title; ?></h5>
+                                <div class="card-meat">
+                                    <div class="card-img-container">
+                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title resource-name"><?php echo $resource->post_title; ?></h5>
 
-                                    <?php echo $resource->post_content; ?>
+                                        <?php echo $resource->post_content; ?>
 
+                                    </div>
                                 </div>
                                 <?php
                                 if (strlen(get_field("author_source", $resource->ID)) > 1) {
                                 ?>
                                     <div class="card-footer text-muted">
-                                        Author/Source: <?php echo get_field("author_source", $resource->ID); ?>
+                                        <small> Author/Source: <?php echo get_field("author_source", $resource->ID); ?></small>
                                     </div>
                                 <?php
                                 }
                                 if (get_the_tags($resource->ID)) {
                                 ?>
                                     <div class="card-footer text-muted">
-                                        Tagged as:
-                                        <?php
-                                        $tagArray = get_the_tags($resource->ID);
-                                        $tagNames = array();
-                                        foreach ($tagArray as $tag) {
-                                            array_push($tagNames, $tag->name);
-                                        }
-                                        echo implode(", ", $tagNames);
-                                        ?>
+                                        <small class="tags">
+                                            Tagged as:
+                                            <?php
+                                            $tagArray = get_the_tags($resource->ID);
+                                            $tagNames = array();
+                                            foreach ($tagArray as $tag) {
+                                                array_push($tagNames, $tag->name);
+                                            }
+                                            echo implode(", ", $tagNames);
+                                            ?></small>
                                     </div>
                                 <?php
                                 } ?>

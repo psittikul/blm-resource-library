@@ -1,4 +1,5 @@
 @import "assets/scss/variables";
+@import "assets/scss/mediaqueries";
 body {
     background-color: black;
     color: white;
@@ -16,6 +17,7 @@ h3.section-title {
     text-decoration: underline;
     text-align: center;
     text-decoration-color: $sunflower;
+    text-transform: uppercase;
 }
 
 #pageTitle {
@@ -34,6 +36,7 @@ h3.section-title {
     padding: 0;
     border-bottom: double white;
     margin-bottom: 0.5rem;
+    text-align: center;
     ul {
         margin: auto;
         .nav-item {
@@ -48,12 +51,17 @@ h3.section-title {
             &:hover {
                 color: $sunflower;
             }
-            // &.active {
-            //     a {
-            //         text-decoration: underline $sunflower;
-            //     }
-            // }
+            &.active {
+                a {
+                    text-decoration: underline $sunflower;
+                }
+            }
         }
+    }
+    button.navbar-toggler {
+        margin: auto;
+        background: none;
+        border: none;
     }
 }
 
@@ -85,7 +93,7 @@ h3.section-title {
 
 #mainContainer {
     color: white;
-    p {
+    &.text-content p {
         font-size: large;
         a {
             color: $sunflower;
@@ -110,40 +118,40 @@ h2#categoryTitle {
     margin: 0;
 }
 
-#categoryNav {
-    &.sticky {
-        position: fixed;
-        width: 100%;
-        z-index: 1;
-        /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-        // & + .section-container:first-of-type {
-        //     padding-top: 60px;
-        // }
-    }
-}
+// #categoryNav {
+//     &.sticky {
+//         position: fixed;
+//         width: 100%;
+//         z-index: 1;
+//         /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+//         // & + .section-container:first-of-type {
+//         //     padding-top: 60px;
+//         // }
+//     }
+// }
 
-#categoryNavMenu {
-    background: rgba(255, 255, 255, 0.5);
-    #categoryNavMenuContent {
-        ul {
-            margin: auto;
-            li {
-                margin-right: 1rem;
-                text-transform: uppercase;
-                color: white;
-                &:hover {
-                    color: $sunflower;
-                    opacity: 1;
-                }
-                a {
-                    text-decoration: none;
-                    color: inherit;
-                    opacity: 1;
-                }
-            }
-        }
-    }
-}
+// #categoryNavMenu {
+//     background: rgba(255, 255, 255, 0.5);
+//     #categoryNavMenuContent {
+//         ul {
+//             margin: auto;
+//             li {
+//                 margin-right: 1rem;
+//                 text-transform: uppercase;
+//                 color: white;
+//                 &:hover {
+//                     color: $sunflower;
+//                     opacity: 1;
+//                 }
+//                 a {
+//                     text-decoration: none;
+//                     color: inherit;
+//                     opacity: 1;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 a.card-link {
     text-decoration: none;
@@ -151,13 +159,34 @@ a.card-link {
 
 .card.resource-card {
     color: black;
+    p {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0 0.25rem;
+    }
     .card-title.resource-name {
         color: black;
         text-align: center;
         border-bottom: solid thin;
+        margin-bottom: 0.25rem;
+    }
+    .card-body {
+        padding: 0;
+    }
+    .card-footer {
+        padding: 0.25rem;
+    }
+    .card-footer .tags {
+        font-size: 60%;
     }
 }
 
 .section-container {
     margin-top: 1rem;
+}
+
+#sectionNavBtn {
+    position: fixed;
+    z-index: 1;
+    background: $sunflower;
 }

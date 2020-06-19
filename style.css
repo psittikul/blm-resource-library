@@ -1,3 +1,32 @@
+/*
+Change card display on mobile
+*/
+@media only screen and (max-width: 576px) {
+  .card.resource-card .card-meat {
+    display: inline-flex;
+  }
+  .card.resource-card .card-meat .card-img-container {
+    width: 35%;
+  }
+  .card.resource-card .card-meat img.card-img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .card.resource-card .card-meat .card-body {
+    width: 65%;
+  }
+  .card.resource-card .card-meat .card-body p {
+    font-size: 0.8rem;
+  }
+
+  /*
+  TO-DO: Change menus on mobile to show current page/section or whatever
+  */
+  #topNav ul li.nav-item a {
+    font-size: 1rem;
+  }
+}
 body {
   background-color: black;
   color: white;
@@ -15,6 +44,7 @@ h3.section-title {
   text-decoration: underline;
   text-align: center;
   text-decoration-color: #e8d82a;
+  text-transform: uppercase;
 }
 
 #pageTitle {
@@ -33,6 +63,7 @@ h3.section-title {
   padding: 0;
   border-bottom: double white;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 #topNav ul {
   margin: auto;
@@ -49,6 +80,14 @@ h3.section-title {
 }
 #topNav ul .nav-item:hover {
   color: #e8d82a;
+}
+#topNav ul .nav-item.active a {
+  text-decoration: underline #e8d82a;
+}
+#topNav button.navbar-toggler {
+  margin: auto;
+  background: none;
+  border: none;
 }
 
 #sideNav {
@@ -79,15 +118,15 @@ h3.section-title {
 #mainContainer {
   color: white;
 }
-#mainContainer p {
+#mainContainer.text-content p {
   font-size: large;
 }
-#mainContainer p a {
+#mainContainer.text-content p a {
   color: #e8d82a;
   text-decoration: underline;
   transition: 0.25s;
 }
-#mainContainer p a:hover {
+#mainContainer.text-content p a:hover {
   text-decoration: none;
   opacity: 0.75;
 }
@@ -102,34 +141,6 @@ h2#categoryTitle {
   margin: 0;
 }
 
-#categoryNav.sticky {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-}
-
-#categoryNavMenu {
-  background: rgba(255, 255, 255, 0.5);
-}
-#categoryNavMenu #categoryNavMenuContent ul {
-  margin: auto;
-}
-#categoryNavMenu #categoryNavMenuContent ul li {
-  margin-right: 1rem;
-  text-transform: uppercase;
-  color: white;
-}
-#categoryNavMenu #categoryNavMenuContent ul li:hover {
-  color: #e8d82a;
-  opacity: 1;
-}
-#categoryNavMenu #categoryNavMenuContent ul li a {
-  text-decoration: none;
-  color: inherit;
-  opacity: 1;
-}
-
 a.card-link {
   text-decoration: none;
 }
@@ -137,14 +148,35 @@ a.card-link {
 .card.resource-card {
   color: black;
 }
+.card.resource-card p {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0 0.25rem;
+}
 .card.resource-card .card-title.resource-name {
   color: black;
   text-align: center;
   border-bottom: solid thin;
+  margin-bottom: 0.25rem;
+}
+.card.resource-card .card-body {
+  padding: 0;
+}
+.card.resource-card .card-footer {
+  padding: 0.25rem;
+}
+.card.resource-card .card-footer .tags {
+  font-size: 60%;
 }
 
 .section-container {
   margin-top: 1rem;
+}
+
+#sectionNavBtn {
+  position: fixed;
+  z-index: 1;
+  background: #e8d82a;
 }
 
 /*# sourceMappingURL=style.css.map */

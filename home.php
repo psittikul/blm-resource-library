@@ -17,7 +17,7 @@ get_header();
 ?>
 
 <!-- <main id="site-content" role="main"> -->
-<div class="container-fluid" id="mainContainer">
+<div class="container-fluid text-content" id="mainContainer">
     <!-- Disclaimer/description of home page (id=30) (edited on the "Home" page in WordPress dashboard) -->
     <?php
     $home = get_page(30);

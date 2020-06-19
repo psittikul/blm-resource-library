@@ -1,0 +1,31 @@
+/*
+Change card display on mobile
+*/
+@media only screen and (max-width: 576px) {
+    .card.resource-card .card-meat {
+        display: inline-flex;
+        .card-img-container {
+            width: 35%;
+        }
+        img.card-img {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .card-body {
+            width: 65%;
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    /*
+TO-DO: Change menus on mobile to show current page/section or whatever
+*/
+    #topNav {
+        ul li.nav-item a {
+            font-size: 1rem;
+        }
+    }
+}
