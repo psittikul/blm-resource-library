@@ -32,3 +32,10 @@ TO-DO: Change menus on mobile to show current page/section or whatever
         }
     }
 }
+
+@media only screen and (min-width: 576px) {
+    .card.resource-card .card-meat {
+        max-height: 32rem;
+        overflow: hidden;
+    }
+}

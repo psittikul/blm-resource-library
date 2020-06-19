@@ -30,6 +30,12 @@ Change card display on mobile
     font-size: 1rem;
   }
 }
+@media only screen and (min-width: 576px) {
+  .card.resource-card .card-meat {
+    max-height: 32rem;
+    overflow: hidden;
+  }
+}
 body {
   background-color: black;
   color: white;
@@ -155,10 +161,6 @@ a.card-link {
   font-size: 1rem;
   margin: 0;
   padding: 0 0.25rem;
-}
-.card.resource-card .card-meat {
-  max-height: 32rem;
-  overflow: hidden;
 }
 .card.resource-card .card-img-container {
   display: flex;
