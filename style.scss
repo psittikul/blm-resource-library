@@ -164,6 +164,15 @@ a.card-link {
         margin: 0;
         padding: 0 0.25rem;
     }
+    .card-img-container {
+        display: flex;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        img {
+            margin: auto;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
     .card-title.resource-name {
         color: black;
         text-align: center;

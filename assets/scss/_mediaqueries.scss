@@ -6,6 +6,7 @@ Change card display on mobile
         display: inline-flex;
         .card-img-container {
             width: 35%;
+            border-bottom: none;
         }
         img.card-img {
             border-bottom-left-radius: 0;

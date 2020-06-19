@@ -7,6 +7,7 @@ Change card display on mobile
   }
   .card.resource-card .card-meat .card-img-container {
     width: 35%;
+    border-bottom: none;
   }
   .card.resource-card .card-meat img.card-img {
     border-bottom-left-radius: 0;
@@ -152,6 +153,15 @@ a.card-link {
   font-size: 1rem;
   margin: 0;
   padding: 0 0.25rem;
+}
+.card.resource-card .card-img-container {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card.resource-card .card-img-container img {
+  margin: auto;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .card.resource-card .card-title.resource-name {
   color: black;
