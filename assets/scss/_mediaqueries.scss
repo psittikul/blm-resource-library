@@ -41,4 +41,21 @@ TO-DO: Change menus on mobile to show current page/section or whatever
         max-height: 32rem;
         overflow: hidden;
     }
+
+    #sideNav {
+        ul li {
+            &:hover {
+                // opacity: 0.75;
+                background: white;
+                color: $sunflower;
+                // transform: translateX(1rem);
+            }
+        }
+        #toggleSideNavBtn {
+            &:hover {
+                background: white;
+                color: $sunflower;
+            }
+        }
+    }
 }

@@ -88,12 +88,7 @@ h4.section-title {
             color: white;
             text-transform: uppercase;
             transition: 0.25s;
-            &:hover {
-                // opacity: 0.75;
-                background: white;
-                color: $sunflower;
-                // transform: translateX(1rem);
-            }
+ 
             &:first-of-type {
                 background: none;
                 text-align: right;

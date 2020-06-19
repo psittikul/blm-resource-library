@@ -39,6 +39,15 @@ Change card display on mobile
     max-height: 32rem;
     overflow: hidden;
   }
+
+  #sideNav ul li:hover {
+    background: white;
+    color: #e8d82a;
+  }
+  #sideNav #toggleSideNavBtn:hover {
+    background: white;
+    color: #e8d82a;
+  }
 }
 body {
   background-color: black;
@@ -127,10 +136,6 @@ h4.section-title {
   color: white;
   text-transform: uppercase;
   transition: 0.25s;
-}
-#sideNav ul li:hover {
-  background: white;
-  color: #e8d82a;
 }
 #sideNav ul li:first-of-type {
   background: none;
