@@ -116,8 +116,9 @@ $curr = get_post(get_the_ID());
                     'post_type' => 'resources',
                     'order'    => 'ASC',
                     'orderby' => array(
-                        'title'=>'asc',
-                        'menu_order'=>'asc'
+
+                        'menu_order' => 'asc',
+                        'title' => 'asc'
                     ),
                     'cat' => $section->term_id
                 );
