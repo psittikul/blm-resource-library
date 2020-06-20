@@ -76,7 +76,7 @@
 				?>
 				<!-- Add an option at end for contact form -->
 				<li class="nav-item">
-					<a data-toggle="modal" data-target="#contactModal">Contact</a>
+					<a class="nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
 				</li>
 			</ul>
 		</div>
