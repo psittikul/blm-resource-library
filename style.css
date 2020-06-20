@@ -4,8 +4,6 @@ Change card display on mobile
 @media only screen and (max-width: 576px) {
   .card.resource-card .card-meat {
     display: inline-flex;
-    max-height: 10rem;
-    overflow: auto;
   }
   .card.resource-card .card-meat .card-img-container {
     width: 35%;
@@ -35,11 +33,6 @@ Change card display on mobile
   }
 }
 @media only screen and (min-width: 576px) {
-  .card.resource-card .card-meat {
-    max-height: 32rem;
-    overflow: hidden;
-  }
-
   #sideNav ul li:hover {
     background: white;
     color: #e8d82a;
@@ -234,6 +227,24 @@ a.card-link {
 }
 .card.resource-card .card-footer .tags {
   font-size: 60%;
+}
+.card.resource-card .toggle-full-content {
+  color: #6c757d;
+  display: inline-flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 3rem;
+  position: absolute;
+  bottom: 0;
+  border: none;
+  background: #020024;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 35%, white 100%);
+}
+.card.resource-card .toggle-full-content a.toggle-link {
+  cursor: pointer;
+}
+.card.resource-card .toggle-full-content a.toggle-link:hover {
+  opacity: 0.7;
 }
 
 #sectionNavBtn {

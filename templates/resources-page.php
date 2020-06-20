@@ -62,6 +62,54 @@ $curr = get_post(get_the_ID());
     ?>
         <div class="section-container" data-tid="<?php echo $section->term_id; ?>" id="<?php echo $section->slug; ?>">
             <h4 class="section-title"><?php echo $section->name; ?></h4>
+
+            <!-- Robust overflow test -->
+
+            <style>
+                .button {
+                    position: absolute;
+                    z-index: 5;
+                    display: none;
+                    cursor: pointer;
+                    color: #555555;
+                }
+
+                .close {
+                    display: none;
+                }
+
+                .open {
+                    display: none;
+                }
+
+                .container {
+                    width: 200px;
+                    overflow: hidden;
+                    border: 1px solid #cacaca;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    position: relative;
+                    margin: auto;
+                    padding: 10px 10px 0px 10px;
+                    float: left;
+                    margin: 5px;
+                }
+
+                .text_container {
+                    height: 105px;
+                    overflow: hidden;
+
+                }
+
+                .text {
+                    text-overflow: ellipsis;
+                }
+            </style>
+
+
+
+            <!-- End test  -->
+
             <div class="row row-cols-1 row-cols-sm-4">
                 <?php
                 $args = array(
@@ -72,53 +120,95 @@ $curr = get_post(get_the_ID());
 
                 $the_query = new WP_Query($args);
                 $posts = $the_query->posts;
+                ?>
+                <?php
                 foreach ($posts as $resource) {
                 ?>
                     <div class="col mb-4">
-                        <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
-                            <div class="card resource-card">
-                                <?php
 
-                                $thumbnail_id = get_post_thumbnail_id($resource->ID);
-                                $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-                                ?>
-                                <div class="card-meat">
-                                    <div class="card-img-container">
-                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
-                                    </div>
-                                    <div class="card-body">
+                        <div class="card resource-card">
+                            <?php
+
+                            $thumbnail_id = get_post_thumbnail_id($resource->ID);
+                            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                            ?>
+                            <div class="card-meat">
+                                <div class="card-img-container">
+                                    <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
+                                </div>
+                                <div class="card-body">
+                                    <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
                                         <h5 class="card-title resource-name"><?php echo $resource->post_title; ?></h5>
+                                    </a>
+                                    <style>
+                                        .full-container {
+                                            overflow: hidden;
+                                            padding-bottom: 1.5rem;
+                                            position: relative;
+                                        }
 
-                                        <?php echo $resource->post_content; ?>
+                                        .card-text-container {
+                                            height: 120px;
+                                            overflow: hidden;
+                                        }
 
+                                        .resource-card .full-container .more-btn {
+                                            color: #6c757d;
+                                            display: inline-flex;
+                                            align-items: flex-end;
+                                            /* padding-left: 75%; */
+                                            width: 100%;
+                                            height: 3rem;
+                                            position: absolute;
+                                            bottom: 0;
+                                            border: none;
+                                            background: rgb(2, 0, 36);
+                                            background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 35%, rgba(255, 255, 255, 1) 100%);
+                                        }
+                                    </style>
+                                    <div class="full-container">
+                                        <div class="card-text-container">
+                                            <div class="actual-text">
+                                                <?php
+                                                echo $resource->post_content;
+                                                ?>
+                                                <!-- wp:paragraph -->
+                                                <!-- Blood In My Eye was completed only days before its author George Jackson died on August 21, 1971 at the hands of San Quentin prison guards during an alleged escape attempt.
+
+                                                At eighteen, George Jackson was convicted of stealing seventy dollars from a gas station and was sentenced from one year to life. He was to spend the rest of his life -- eleven years-- in the California prison system, seven in solitary confinement. In prison he read widely and transformed himself into an activist and political theoretician who defined himself as a revolutionary. -->
+
+                                            </div>
+
+                                        </div>
+                                      
                                     </div>
                                 </div>
-                                <?php
-                                if (strlen(get_field("author_source", $resource->ID)) > 1) {
-                                ?>
-                                    <div class="card-footer text-muted">
-                                        <small> Author/Source: <?php echo get_field("author_source", $resource->ID); ?></small>
-                                    </div>
-                                <?php
-                                }
-                                if (get_the_tags($resource->ID)) {
-                                ?>
-                                    <div class="card-footer text-muted">
-                                        <small class="tags">
-                                            Tagged as:
-                                            <?php
-                                            $tagArray = get_the_tags($resource->ID);
-                                            $tagNames = array();
-                                            foreach ($tagArray as $tag) {
-                                                array_push($tagNames, $tag->name);
-                                            }
-                                            echo implode(", ", $tagNames);
-                                            ?></small>
-                                    </div>
-                                <?php
-                                } ?>
                             </div>
-                        </a>
+                            <?php
+                            if (strlen(get_field("author_source", $resource->ID)) > 1) {
+                            ?>
+                                <div class="card-footer text-muted">
+                                    <small> Author/Source: <?php echo get_field("author_source", $resource->ID); ?></small>
+                                </div>
+                            <?php
+                            }
+                            if (get_the_tags($resource->ID)) {
+                            ?>
+                                <div class="card-footer text-muted">
+                                    <small class="tags">
+                                        Tagged as:
+                                        <?php
+                                        $tagArray = get_the_tags($resource->ID);
+                                        $tagNames = array();
+                                        foreach ($tagArray as $tag) {
+                                            array_push($tagNames, $tag->name);
+                                        }
+                                        echo implode(", ", $tagNames);
+                                        ?></small>
+                                </div>
+                            <?php
+                            } ?>
+                        </div>
                     </div>
 
                 <?php

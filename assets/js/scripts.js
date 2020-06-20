@@ -1,4 +1,42 @@
 $(function () {
+    var starth = 5 * ($(".resource-card .actual-text").css("line-height").replace("px", ""));
+    $(".resource-card").each(function () {
+        // Only show read more button thing if its text is past the desired height
+        if ($(this).find(".card-text-container .actual-text").height() > starth) {
+            $(this).find(".full-container").append("<div class='toggle-full-content'><a data-mode='show' class='toggle-link'>Show more &nbsp;<i class='fas fa-angle-down'></i></div>");
+            var divWidth = $(this).find(".full-container").find("div.toggle-full-content").width();
+            var aWidth = $(this).find(".full-container").find("a.toggle-link").width();
+            $(this).find(".toggle-full-content").find("a.toggle-link").css("padding-left", (divWidth - aWidth - 5));
+        }
+    });
+
+
+
+    $(".toggle-full-content a.toggle-link").on("click", function () {
+        if ($(this).attr("data-mode") == "more") {
+            $(this).html('Show less &nbsp;<i class="fas fa-angle-up"></i>');
+            $(this).attr("data-mode", "less");
+            $(this).parent().parent().find(".card-text-container").animate({ "height": $(this).parent().parent().find(".actual-text").height() }, 800);
+            var targetDiv = $(this).parent();
+            setTimeout(function () {
+                $(targetDiv).css("background", "none");
+            }, 700);
+        }
+        else {
+            $(this).html('Show more &nbsp;<i class="fas fa-angle-down"></i>');
+            $(this).attr("data-mode", "more");
+            $(this).parent().parent().find(".card-text-container").animate({ "height": starth }, 800);
+            var targetDiv = $(this).parent();
+            setTimeout(function () {
+                $(targetDiv).css("background", "linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 35%, rgba(255, 255, 255, 1) 100%)");
+            }, 100);
+        }
+    });
+
+
+
+
+
     $("[data-toggle='tooltip'").tooltip();
     // TO-DO: Update positions when window is resized (or other events that would change section positions??)
     var sectionPositions = new Map();
