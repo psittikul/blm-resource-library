@@ -12,6 +12,24 @@
  */
 
 ?>
+<!-- Contact form modal -->
+<div class="modal" tabindex="-1" role="dialog" id="contactModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">CONTACT FORM</h5>
+                <button type="button" class="close" data-dismiss="modal" data-target="#contactModal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
+                echo do_shortcode('[wpforms id="49" title="false" description="false"]');
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
 <footer id="site-footer" role="contentinfo" class="header-footer-group">
 
 </footer><!-- #site-footer -->

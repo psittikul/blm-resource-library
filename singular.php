@@ -15,6 +15,9 @@ get_header();
 <div class="container-fluid" id="mainContainer">
 	<?php
 	$page = get_page(get_the_ID());
-	echo do_shortcode('[wpforms id="49" title="false" description="false"]');
+	echo $page->post_content;
+	// echo do_shortcode('[wpforms id="49" title="false" description="false"]');
 	?>
 </div>
+<?php
+get_footer(); ?>

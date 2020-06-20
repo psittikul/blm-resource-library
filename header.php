@@ -74,6 +74,10 @@
 				<?php
 				}
 				?>
+				<!-- Add an option at end for contact form -->
+				<li class="nav-item" data-toggle="modal" data-target="#contactForm">
+					Contact
+				</li>
 			</ul>
 		</div>
 	</nav>
