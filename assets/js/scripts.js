@@ -3,7 +3,7 @@ $(function () {
     $(".resource-card").each(function () {
         // Only show read more button thing if its text is past the desired height
         if ($(this).find(".card-text-container .actual-text").height() > starth) {
-            $(this).find(".full-container").append("<div class='toggle-full-content'><a data-mode='show' class='toggle-link'>Show more &nbsp;<i class='fas fa-angle-down'></i></div>");
+            $(this).find(".full-container").append("<div class='toggle-full-content'><a data-mode='more' class='toggle-link'>Show more &nbsp;<i class='fas fa-angle-down'></i></div>");
             var divWidth = $(this).find(".full-container").find("div.toggle-full-content").width();
             var aWidth = $(this).find(".full-container").find("a.toggle-link").width();
             $(this).find(".toggle-full-content").find("a.toggle-link").css("padding-left", (divWidth - aWidth - 5));
