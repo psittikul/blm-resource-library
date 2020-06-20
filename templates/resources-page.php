@@ -134,38 +134,15 @@ $curr = get_post(get_the_ID());
                             ?>
                             <div class="card-meat">
                                 <div class="card-img-container">
-                                    <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
+                                    <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
+                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
+                                    </a>
                                 </div>
                                 <div class="card-body">
-                                    <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
-                                        <h5 class="card-title resource-name"><?php echo $resource->post_title; ?></h5>
-                                    </a>
-                                    <style>
-                                        .full-container {
-                                            overflow: hidden;
-                                            padding-bottom: 1.5rem;
-                                            position: relative;
-                                        }
+                                    <h5 class="card-title resource-name">
+                                        <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank"><?php echo $resource->post_title; ?></a>
+                                    </h5>
 
-                                        .card-text-container {
-                                            height: 120px;
-                                            overflow: hidden;
-                                        }
-
-                                        .resource-card .full-container .more-btn {
-                                            color: #6c757d;
-                                            display: inline-flex;
-                                            align-items: flex-end;
-                                            /* padding-left: 75%; */
-                                            width: 100%;
-                                            height: 3rem;
-                                            position: absolute;
-                                            bottom: 0;
-                                            border: none;
-                                            background: rgb(2, 0, 36);
-                                            background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.8) 35%, rgba(255, 255, 255, 1) 100%);
-                                        }
-                                    </style>
                                     <div class="full-container">
                                         <div class="card-text-container">
                                             <div class="actual-text">
@@ -180,7 +157,7 @@ $curr = get_post(get_the_ID());
                                             </div>
 
                                         </div>
-                                      
+
                                     </div>
                                 </div>
                             </div>

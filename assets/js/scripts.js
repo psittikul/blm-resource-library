@@ -1,6 +1,10 @@
 $(function () {
+    /**
+     * TO-DO: Account for resizing of screen
+     */
     var starth = 5 * ($(".resource-card .actual-text").css("line-height").replace("px", ""));
     $(".resource-card").each(function () {
+        $(this).find(".card-text-container").css("height", starth);
         // Only show read more button thing if its text is past the desired height
         if ($(this).find(".card-text-container .actual-text").height() > starth) {
             $(this).find(".full-container").append("<div class='toggle-full-content'><a data-mode='more' class='toggle-link'>Show more &nbsp;<i class='fas fa-angle-down'></i></div>");

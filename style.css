@@ -199,6 +199,13 @@ a.card-link {
 .card.resource-card {
   color: black;
 }
+.card.resource-card a.card-link {
+  transition: 0.25s;
+  color: inherit;
+}
+.card.resource-card a.card-link:hover {
+  color: #e8d82a;
+}
 .card.resource-card p {
   font-size: 1rem;
   margin: 0;
@@ -227,6 +234,14 @@ a.card-link {
 }
 .card.resource-card .card-footer .tags {
   font-size: 60%;
+}
+.card.resource-card .full-container {
+  overflow: hidden;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.card.resource-card .card-text-container {
+  overflow: hidden;
 }
 .card.resource-card .toggle-full-content {
   color: #6c757d;
