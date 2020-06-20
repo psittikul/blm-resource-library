@@ -95,6 +95,7 @@ h4.section-title {
   font-family: "Oswald", sans-serif;
   color: white;
   transition: 0.25s;
+  cursor: pointer;
 }
 #topNav ul .nav-item a {
   color: inherit;
