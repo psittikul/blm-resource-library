@@ -115,6 +115,7 @@ $curr = get_post(get_the_ID());
                 $args = array(
                     'post_type' => 'resources',
                     'order'    => 'ASC',
+                    'orderby' => 'title',
                     'cat' => $section->term_id
                 );
 

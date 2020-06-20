@@ -10,7 +10,7 @@ $(function () {
             $(this).find(".full-container").append("<div class='toggle-full-content'><a data-mode='more' class='toggle-link'>Show more &nbsp;<i class='fas fa-angle-down'></i></div>");
             var divWidth = $(this).find(".full-container").find("div.toggle-full-content").width();
             var aWidth = $(this).find(".full-container").find("a.toggle-link").width();
-            $(this).find(".toggle-full-content").find("a.toggle-link").css("padding-left", (divWidth - aWidth - 5));
+            $(this).find(".toggle-full-content").find("a.toggle-link").css("padding-left", (divWidth - aWidth - 15));
         }
     });
 
