@@ -16,5 +16,6 @@ get_header();
 	<?php 
 		$page = get_page(get_the_ID());
 		echo $page->post_content;
+		echo do_shortcode('[wpforms id="49" title=');
 	?>
 </div>
