@@ -116,7 +116,6 @@ $curr = get_post(get_the_ID());
                     'post_type' => 'resources',
                     'order'    => 'ASC',
                     'orderby' => array(
-
                         'menu_order' => 'asc',
                         'title' => 'asc'
                     ),
@@ -145,7 +144,7 @@ $curr = get_post(get_the_ID());
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title resource-name">
-                                        <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank"><?php echo $resource->post_title; ?></a>
+                                        <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank"><?php echo $resource->post_title; ?> <i class="fas fa-external-link-alt"></i></a>
                                     </h5>
 
                                     <div class="full-container">

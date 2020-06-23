@@ -226,6 +226,9 @@ a.card-link {
         text-align: center;
         border-bottom: solid thin;
         margin-bottom: 0.25rem;
+        i {
+            font-size: medium;
+        }
     }
     .card-body {
         padding: 0;
