@@ -12,13 +12,6 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
-
-    <?php
-
-    echo the_title();
-    ?>
-
-</main><!-- #site-content -->
-
-<?php get_footer(); ?>
+<div class="container-fluid" id="mainContainer">
+    <h2><?php echo the_title(); ?></h2>
+</div>
