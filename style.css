@@ -278,6 +278,10 @@ a.card-link {
   text-decoration: underline #e8d82a;
 }
 
+.author-source {
+  text-align: center;
+}
+
 h4.resource-subheading {
   background: #e8d82a;
   padding: 0.25rem;
