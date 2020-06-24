@@ -308,6 +308,10 @@ ul.book-list {
             &:hover {
                 color: $sunflower;
             }
+            &:last-of-type {
+                font-size: large;
+                text-decoration: underline;
+            }
         }
         img {
             width: 8rem;

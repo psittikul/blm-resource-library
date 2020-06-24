@@ -297,6 +297,10 @@ ul.book-list li a {
 ul.book-list li a:hover {
   color: #e8d82a;
 }
+ul.book-list li a:last-of-type {
+  font-size: large;
+  text-decoration: underline;
+}
 ul.book-list li img {
   width: 8rem;
   height: auto;
