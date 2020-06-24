@@ -271,4 +271,36 @@ a.card-link {
   background: #e8d82a;
 }
 
+/* Single resource page styles */
+.resource-post-title {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline #e8d82a;
+}
+
+h4.resource-subheading {
+  background: #e8d82a;
+  padding: 0.25rem;
+}
+
+ul.book-list {
+  list-style: none;
+  padding: 0;
+}
+ul.book-list li {
+  border-bottom: solid thin white;
+}
+ul.book-list li a {
+  color: white;
+  transition: 0.25s;
+}
+ul.book-list li a:hover {
+  color: #e8d82a;
+}
+ul.book-list li img {
+  width: 8rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
