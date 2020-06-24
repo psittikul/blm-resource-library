@@ -13,11 +13,13 @@ get_header();
 ?>
 
 <div class="container-fluid" id="mainContainer">
+    <?php
+    $rid = get_the_ID();
+    $resource = get_post($rid); ?>
     <h2 class="resource-post-title"><?php echo the_title(); ?></h2>
-    <?php 
-        $rid = get_the_ID();
-        $resource = get_post($rid);
-        echo $resource->post_content;
-        echo get_field("full_content", $rid);
+    <p class="author-source"><?php echo get_field("author_source", $rid); ?></p>
+    <?php
+    echo $resource->post_content;
+    echo get_field("full_content", $rid);
     ?>
 </div>
