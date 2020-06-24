@@ -232,6 +232,15 @@ a.card-link {
     }
     .card-body {
         padding: 0;
+        .actual-text {
+            a {
+                color: $sunflower;
+                transition: 0.25s;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
     .card-footer {
         padding: 0.25rem;
