@@ -17,6 +17,7 @@ get_header();
     <?php 
         $rid = get_the_ID();
         $resource = get_post($rid);
+        echo $resource->post_content;
         echo get_field("full_content", $rid);
     ?>
 </div>
