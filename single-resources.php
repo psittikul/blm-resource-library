@@ -28,20 +28,6 @@ get_header();
     if (get_field("slide_image_1", $rid)) {
     ?>
         <div id="graphicCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-            <ol class="carousel-indicators">
-                <!-- TO-DO: Actually do these lol -->
-                <?php
-                for ($i = 1; $i < 11; $i++) {
-                    $fieldname = "slide_image_$i";
-                    if (get_field($fieldname, $rid)) {
-                ?>
-                        <li data-target="#graphicCarousel" data-slide-to="<?php echo $i - 1; ?>" class="<?php echo $i == 1 ? 'active' : '' ?>"></li>
-                <?php
-                    }
-                }
-                ?>
-
-            </ol>
             <div class="carousel-inner">
                 <?php
                 // Go through each of the slideshow images
@@ -61,6 +47,20 @@ get_header();
                 }
                 ?>
             </div>
+            <ol class="carousel-indicators">
+                <!-- TO-DO: Actually do these lol -->
+                <?php
+                for ($i = 1; $i < 11; $i++) {
+                    $fieldname = "slide_image_$i";
+                    if (get_field($fieldname, $rid)) {
+                ?>
+                        <li data-target="#graphicCarousel" data-slide-to="<?php echo $i - 1; ?>" class="<?php echo $i == 1 ? 'active' : '' ?>"></li>
+                <?php
+                    }
+                }
+                ?>
+
+            </ol>
             <a class="carousel-control-prev" href="#graphicCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>

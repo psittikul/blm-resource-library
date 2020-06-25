@@ -337,4 +337,8 @@ ul.book-list li img {
   margin-right: 1rem;
 }
 
+#graphicCarousel .carousel-indicators {
+  position: initial;
+}
+
 /*# sourceMappingURL=style.css.map */
