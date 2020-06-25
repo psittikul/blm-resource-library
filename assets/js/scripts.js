@@ -1,9 +1,9 @@
 $(function () {
+    console.log("Is this working???");
     /**
      * On an infographic page, put all of its images into a carousel
      */
     console.log($("#graphicCarousel"));
-    console.log($("img").length);
     if ($("#graphicCarousel").length > 0) {
         console.log("There's a carousel here");
         $("img").each(function (index, value) {
