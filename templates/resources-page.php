@@ -146,8 +146,9 @@ $curr = get_post(get_the_ID());
                                 <div class="card-img-container">
                                     <!-- IF THIS PARTICULAR RESOURCE HAS A TRIGGER WARNING, SHOW A LIL OVERLAY AND BLUR THUMBNAIL IMAGE -->
                                     <?php
+                                    $tw = get_field("trigger_warnings", $resource->ID);
                                     if (strlen(get_field("trigger_warnings", $resource->ID)) > 1) {
-                                        $tw = get_field("trigger_warnings", $resource->ID);
+
                                     ?>
                                         <div class="overlay trigger-warning">
                                             <p>TW: <?php echo get_field("trigger_warnings", $resource->ID); ?></p>
