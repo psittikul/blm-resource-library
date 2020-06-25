@@ -125,7 +125,8 @@ $curr = get_post(get_the_ID());
                         'menu_order' => 'asc',
                         'title' => 'asc'
                     ),
-                    'cat' => $section->term_id
+                    'cat' => $section->term_id,
+                    'posts_per_page' => -1
                 );
 
                 $the_query = new WP_Query($args);
@@ -171,10 +172,6 @@ $curr = get_post(get_the_ID());
                                                 <?php
                                                 echo $resource->post_content;
                                                 ?>
-                                                <!-- wp:paragraph -->
-                                                <!-- Blood In My Eye was completed only days before its author George Jackson died on August 21, 1971 at the hands of San Quentin prison guards during an alleged escape attempt.
-
-                                                At eighteen, George Jackson was convicted of stealing seventy dollars from a gas station and was sentenced from one year to life. He was to spend the rest of his life -- eleven years-- in the California prison system, seven in solitary confinement. In prison he read widely and transformed himself into an activist and political theoretician who defined himself as a revolutionary. -->
 
                                             </div>
 
