@@ -45,8 +45,7 @@ get_header();
                             <?php
                             $img = get_field($fieldname, $rid);
                             // echo var_dump($img);
-                            echo  get_field($fieldname, $rid)->title;
-                            echo "Try this: " . get_field("slide_image_1", $rid)->title; ?>
+                            echo "Try this: " . var_dump($img[0]); ?>
                             <img src="<?php echo $img->url; ?>" alt="<?php echo $img->alt; ?>" />
                         </div>
                 <?php
