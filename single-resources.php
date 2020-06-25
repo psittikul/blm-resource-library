@@ -43,11 +43,8 @@ get_header();
                 ?>
                         <div class='carousel-item <?php echo $i == 1 ? "active" : ""; ?>'>
                             <?php
-                            $img = get_field($fieldname, $rid);
-                            // echo var_dump($img);
-                            echo "Try this: " . get_field("slide_image_1", $rid)->title;
-                            echo "Or this? : " . get_field("slide_image_1", $rid)["title"]; ?>
-                            <img src="<?php echo $img->url; ?>" alt="<?php echo $img->alt; ?>" />
+                            $img = get_field($fieldname, $rid); ?>
+                            <img src="<?php echo $img['url']; ?>" alt="<?php echo $img["alt"]; ?>" title="<?php echo $img["title"]; ?>" />
                         </div>
                 <?php
                     } else {
