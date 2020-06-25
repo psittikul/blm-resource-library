@@ -126,6 +126,13 @@ h4.section-title {
 
 #mainContainer {
     color: white;
+    a {
+        color: $sunflower;
+        transition: 0.25s;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     &.text-content p {
         font-size: large;
         a {
@@ -234,7 +241,7 @@ a.card-link {
             border-bottom-left-radius: 0;
         }
         .overlay.trigger-warning {
-            background: rgba(0,0,0,.8);
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 1rem 0.25rem;
             position: absolute;
@@ -355,7 +362,12 @@ ul.book-list {
     }
 }
 
+#graphicCarousel {
+    .carousel-inner {
+        text-align: center;
+    }
 
-#graphicCarousel .carousel-indicators {
-    position: initial;
+    .carousel-indicators {
+        position: initial;
+    }
 }
