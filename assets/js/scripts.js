@@ -1,5 +1,23 @@
 $(function () {
     /**
+     * On an infographic page, put all of its images into a carousel
+     */
+    if ($("#graphicCarousel").length > 0) {
+        $("img").each(function (index, value) {
+            if (index == 0) {
+                // Have to set first image to active slide
+                console.log(value);
+                $("#graphicCarousel").find(".carousel-inner").append("<div class='carousel-item active'>" + value + "</div>");
+            }
+            else {
+
+            }
+        });
+    }
+
+
+
+    /**
      * TO-DO: Account for resizing of screen
      */
     var starth = 5 * ($(".resource-card .actual-text").css("line-height").replace("px", ""));
@@ -91,7 +109,7 @@ $(function () {
     /**
      * Make category nav menu dropdown sticky when scrolling, and update the current subcategory link
      */
-    // window.onscroll = function () { updateNav() };
+    // window.onscroll = function () {updateNav()};
     // var dropdownBtn = $("#sectionNavBtn");
     // // Height of dropdown
     // var dropdownHeight = $("#sectionNavBtn").height();

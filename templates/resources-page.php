@@ -23,7 +23,7 @@ $curr = get_post(get_the_ID());
      * If this page/category has any associated content (i.e. the reading tips on the Educational Resources page), show it at the top
      */
     echo $curr->post_content;
-
+    
 
     $allCategories = get_categories();
     $subcategories = array();

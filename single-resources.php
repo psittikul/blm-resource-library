@@ -20,7 +20,44 @@ get_header();
     <p class="author-source">Author/source: <?php echo get_field("author_source", $rid); ?></p>
     <?php
     echo $resource->post_content;
-    echo var_dump(get_the_category($rid));
+    $categories = get_the_category($rid);
+    /**
+     * If this post is of the Infographics, Zines, & Memes category and has multiple images, 
+     * display as a slideshow thing (with option to view all in a grid)
+     */
+    foreach ($categories as $category) {
+        if ($category["slug"] == "infographics-zines-memes") {
+            echo "This is an infographic";
+    ?>
+            <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!-- <div class="carousel-item active">
+                        <img class="d-block w-100" src="..." alt="First slide">
+                    </div> -->
+                    <!-- <div class="carousel-item">
+                        <img class="d-block w-100" src="..." alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="..." alt="Third slide">
+                    </div> -->
+                </div>
+                <a class="carousel-control-prev" href="#graphicCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#graphicCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+    <?php
+        }
+    }
     echo get_field("full_content", $rid);
     ?>
 </div>
