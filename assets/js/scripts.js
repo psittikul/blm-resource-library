@@ -3,11 +3,12 @@ $(function () {
      * On an infographic page, put all of its images into a carousel
      */
     if ($("#graphicCarousel").length > 0) {
+        console.log("There's a carousel here");
         $("img").each(function (index, value) {
             if (index == 0) {
                 // Have to set first image to active slide
                 console.log(value);
-                $("#graphicCarousel").find(".carousel-inner").append("<div class='carousel-item active'>" + value + "</div>");
+                // $("#graphicCarousel").find(".carousel-inner").append("<div class='carousel-item active'>" + value + "</div>");
             }
             else {
 
