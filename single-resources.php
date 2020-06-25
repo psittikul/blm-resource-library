@@ -77,3 +77,5 @@ get_header();
     echo get_field("full_content", $rid);
     ?>
 </div>
+<?php
+get_footer(); ?>
