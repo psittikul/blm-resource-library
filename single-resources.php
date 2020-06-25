@@ -26,9 +26,10 @@ get_header();
      * display as a slideshow thing (with option to view all in a grid)
      */
     foreach ($categories as $category) {
-        echo $category["slug"];
-        if ($category["slug"] == "infographics-zines-memes") {
-            echo "This is an infographic";
+        echo var_dump($category);
+        // echo $category["slug"];
+        // if ($category["slug"] == "infographics-zines-memes") {
+        //     echo "This is an infographic";
     ?>
             <!-- <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -49,7 +50,7 @@ get_header();
                 </a>
             </div> -->
     <?php
-        }
+        // }
     }
     echo get_field("full_content", $rid);
     ?>
