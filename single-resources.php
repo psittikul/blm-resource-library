@@ -40,11 +40,12 @@ get_header();
                 for ($i = 1; $i < 11; $i++) {
                     $fieldname = "slide_image_$i";
                     if (get_field($fieldname, $rid)) {
-                        $img = get_field($fieldname, $rid);
                 ?>
                         <div class='carousel-item <?php echo $i == 1 ? "active" : ""; ?>'>
-                            <?php echo $fieldname;
-                            echo var_dump(get_field($fieldname, $rid)); ?>
+                            <?php
+                            $img = get_field($fieldname, $rid);
+                            echo var_dump($img);
+                            echo  get_field($fieldname, $rid)->title; ?>
                             <img src="<?php echo $img->url; ?>" alt="<?php echo $img->alt; ?>" />
                         </div>
                 <?php
