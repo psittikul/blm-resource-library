@@ -185,6 +185,14 @@ a[data-toggle=modal][data-target="#contactModal"] {
 /*
 Resource category page styles
 */
+.page-tips a {
+  color: #e8d82a;
+  transition: 0.25s;
+}
+.page-tips a:hover {
+  text-decoration: underline;
+}
+
 h2#categoryTitle {
   text-transform: uppercase;
   text-align: center;
