@@ -27,12 +27,12 @@ get_header();
      */
     foreach ($categories as $category) {
         // echo var_dump($category);
-        echo $category->slug;
+        // echo $category->slug;
         // echo $category["slug"];
-        // if ($category["slug"] == "infographics-zines-memes") {
-        //     echo "This is an infographic";
+        if ($category->slug == "infographics-zines-memes") {
+            echo "This is an infographic";
     ?>
-            <!-- <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
+            <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -49,9 +49,9 @@ get_header();
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-            </div> -->
+            </div>
     <?php
-        // }
+        }
     }
     echo get_field("full_content", $rid);
     ?>
