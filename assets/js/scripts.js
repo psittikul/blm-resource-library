@@ -1,12 +1,14 @@
 $(function () {
-    
+
 
 
 
     /**
      * TO-DO: Account for resizing of screen
      */
-    var starth = 5 * ($(".resource-card .actual-text").css("line-height").replace("px", ""));
+    if ($(".resource-card .actual-text").length > 0) {
+        var starth = 5 * ($(".resource-card .actual-text").css("line-height").replace("px", ""));
+    }
     $(".resource-card").each(function () {
         $(this).find(".card-text-container").css("height", starth);
         // Only show read more button thing if its text is past the desired height

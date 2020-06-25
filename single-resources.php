@@ -27,7 +27,7 @@ get_header();
      */
     if (get_field("slide_image_1", $rid)) {
     ?>
-        <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
+        <div id="graphicCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
             <ol class="carousel-indicators">
                 <!-- TO-DO: Actually do these lol -->
                 <?php
