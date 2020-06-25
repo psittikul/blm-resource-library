@@ -192,6 +192,9 @@ Resource category page styles
 .page-tips a:hover {
   text-decoration: underline;
 }
+.page-tips i {
+  color: #e8d82a;
+}
 
 h2#categoryTitle {
   text-transform: uppercase;
