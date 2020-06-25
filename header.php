@@ -55,7 +55,7 @@
 			 * TO-DO: If this is a single resource post and not an actual page, show the usual mobile top nav
 			 */
 			if (is_single()) {
-				echo "This is a single post lol";
+				echo "This is a single post lol with ID: " . get_the_ID();
 			}
 			?>
 		</button>

@@ -220,6 +220,11 @@ a.card-link {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+.card.resource-card .card-img-container .overlay.trigger-warning {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem 0.25rem;
+}
 .card.resource-card .card-title.resource-name {
   color: black;
   text-align: center;

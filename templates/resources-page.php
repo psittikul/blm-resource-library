@@ -19,6 +19,12 @@ $curr = get_post(get_the_ID());
 
 <div class="container-fluid" id="mainContainer">
     <?php
+    /**
+     * If this page/category has any associated content (i.e. the reading tips on the Educational Resources page), show it at the top
+     */
+    echo $curr->post_content;
+
+
     $allCategories = get_categories();
     $subcategories = array();
     $cid = -1;
@@ -66,7 +72,7 @@ $curr = get_post(get_the_ID());
             <!-- Robust overflow test -->
 
             <style>
-                .button {
+                /* .button {
                     position: absolute;
                     z-index: 5;
                     display: none;
@@ -103,7 +109,7 @@ $curr = get_post(get_the_ID());
 
                 .text {
                     text-overflow: ellipsis;
-                }
+                } */
             </style>
 
 
@@ -138,8 +144,19 @@ $curr = get_post(get_the_ID());
                             ?>
                             <div class="card-meat">
                                 <div class="card-img-container">
+                                    <!-- IF THIS PARTICULAR RESOURCE HAS A TRIGGER WARNING, SHOW A LIL OVERLAY AND BLUR THUMBNAIL IMAGE -->
+                                    <?php
+                                    if (strlen(get_field("trigger_warning", $resource->ID)) > 1) {
+                                        $tw = get_field("trigger_warning", $resource->ID);
+                                    ?>
+                                        <div class="overlay trigger-warning">
+                                            <p>TW: <?php echo get_field("trigger_warning", $resource->ID); ?></p>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
                                     <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
-                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
+                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" style="<?php echo strlen($tw) > 1 ? '-webkit-filter: blur(6px); filter: blur(6px);' : '' ?>" alt="<?php echo $alt; ?>" />
                                     </a>
                                 </div>
                                 <div class="card-body">
