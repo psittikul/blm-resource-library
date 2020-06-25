@@ -30,9 +30,17 @@ get_header();
         <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <!-- TO-DO: Actually do these lol -->
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <?php
+                for ($i = 1; $i < 11; $i++) {
+                    $fieldname = "slide_image_$i";
+                    if (get_field($fieldname, $rid)) {
+                ?>
+                        <li data-target="#graphicCarousel" data-slide-to="<?php echo $i - 1; ?>" class="<?php echo $i == 1 ? 'active' : '' ?>"></li>
+                <?php
+                    }
+                }
+                ?>
+
             </ol>
             <div class="carousel-inner">
                 <?php
