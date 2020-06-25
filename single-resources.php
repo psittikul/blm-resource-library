@@ -43,6 +43,8 @@ get_header();
                         $img = get_field($fieldname, $rid);
                 ?>
                         <div class='carousel-item active'>
+                            <?php echo $fieldname;
+                            echo var_dump(get_field($fieldname, $rid)); ?>
                             <img src="<?php echo $img->url; ?>" alt="<?php echo $img->alt; ?>" />
                         </div>
                 <?php
