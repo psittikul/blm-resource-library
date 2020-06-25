@@ -22,13 +22,18 @@ get_header();
     echo $resource->post_content;
     $categories = get_the_category($rid);
     /**
-     * If this post is of the Infographics, Zines, & Memes category and has multiple images, 
-     * display as a slideshow thing (with option to view all in a grid)
+     * If this post has slideshow images, set up that display
+     * TO-DO: Offer a "view all slides"/grid view button thing
      */
-    foreach ($categories as $category) {
-        if ($category->slug == "infographics-zines-memes") {
+    if (get_field("slide_image_1", $rid)) {
+        echo var_dump(get_field("slide_image_1", $rid));
+        $fieldname = "slide_image_" . 2;
+        echo var_dump(get_field($fieldname, $rid));
+    } else {
+        echo "No slide images apparently";
+    }
     ?>
-            <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
+    <!-- <div id="graphicCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -45,10 +50,8 @@ get_header();
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-            </div>
+            </div> -->
     <?php
-        }
-    }
     echo get_field("full_content", $rid);
     ?>
 </div>
