@@ -118,6 +118,9 @@ $curr = get_post(get_the_ID());
 
             <div class="row row-cols-1 row-cols-sm-4">
                 <?php
+                /**
+                 * TO-DO: Order resources ignoring articles like "The", "An" etc.
+                 */
                 $args = array(
                     'post_type' => 'resources',
                     'order'    => 'ASC',
