@@ -125,14 +125,14 @@ h4.section-title {
 }
 
 #mainContainer {
+    color: white;
     &.single-resource {
         a {
             color: $sunflower;
         }
     }
-    color: white;
     a {
-        color: inherit;
+        // color: $sunflower;
         transition: 0.25s;
         &:hover {
             text-decoration: underline;
@@ -260,7 +260,7 @@ a.card-link {
         border-bottom: solid thin;
         margin-bottom: 0.25rem;
         a {
-            color: black;
+            color: inherit;
             transition: 0.25s;
             &:hover {
                 color: $sunflower;
