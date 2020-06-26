@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-<div class="container-fluid" id="mainContainer">
+<div class="container-fluid single-resource" id="mainContainer">
     <?php
     $rid = get_the_ID();
     $resource = get_post($rid); ?>

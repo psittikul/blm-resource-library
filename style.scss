@@ -125,9 +125,14 @@ h4.section-title {
 }
 
 #mainContainer {
+    &.single-resource {
+        a {
+            color: $sunflower;
+        }
+    }
     color: white;
     a {
-        color: $sunflower;
+        color: inherit;
         transition: 0.25s;
         &:hover {
             text-decoration: underline;

@@ -161,8 +161,11 @@ h4.section-title {
 #mainContainer {
   color: white;
 }
-#mainContainer a {
+#mainContainer.single-resource a {
   color: #e8d82a;
+}
+#mainContainer a {
+  color: inherit;
   transition: 0.25s;
 }
 #mainContainer a:hover {
