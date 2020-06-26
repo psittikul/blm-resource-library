@@ -45,9 +45,9 @@
 			<?php
 			}
 			/**
-			 * If this page is NOT the home page, display its name as the mobile nav button
+			 * If this page is NOT the home page and NOT a single resource post (i.e. a resource category), display its name as the mobile nav button
 			 */
-			if (!is_home()) {
+			if (!is_home() && !is_single()) {
 				$page = get_page(get_the_ID());
 				echo $page->post_title . ' <i class="fas fa-caret-down"></i>';
 			}
@@ -55,7 +55,9 @@
 			 * TO-DO: If this is a single resource post and not an actual page, show the usual mobile top nav
 			 */
 			if (is_single()) {
-				echo "This is a single post lol with ID: " . get_the_ID();
+			?>
+				GO TO PAGE <i class="fas fa-caret-down"></i>
+			<?php
 			}
 			?>
 		</button>
