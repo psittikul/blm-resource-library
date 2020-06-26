@@ -50,7 +50,7 @@ get_header();
             <ol class="carousel-indicators">
                 <!-- TO-DO: Actually do these lol -->
                 <?php
-                for ($i = 1; $i < 11; $i++) {
+                for ($i = 1; $i < 17; $i++) {
                     $fieldname = "slide_image_$i";
                     if (get_field($fieldname, $rid)) {
                 ?>
