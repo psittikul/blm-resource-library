@@ -36,6 +36,7 @@ $(function () {
         else {
             $(this).html('Show more &nbsp;<i class="fas fa-angle-down"></i>');
             $(this).attr("data-mode", "more");
+            $(this).parent().parent().find(".card-text-container").removeClass("expanded");
             $(this).parent().parent().find(".card-text-container").animate({ "height": starth }, 800);
             var targetDiv = $(this).parent();
             setTimeout(function () {
