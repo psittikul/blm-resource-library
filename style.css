@@ -287,8 +287,10 @@ a.card-link {
   position: relative;
 }
 .card.resource-card .card-text-container {
-  margin-bottom: 1rem;
   overflow: hidden;
+}
+.card.resource-card .card-text-container.expanded {
+  margin-bottom: 1rem;
 }
 .card.resource-card .toggle-full-content {
   color: #6c757d;

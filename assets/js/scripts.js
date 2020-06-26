@@ -26,6 +26,7 @@ $(function () {
         if ($(this).attr("data-mode") == "more") {
             $(this).html('Show less &nbsp;<i class="fas fa-angle-up"></i>');
             $(this).attr("data-mode", "less");
+            $(this).parent().parent().find(".card-text-container").addClass("expanded");    // Add this class so we can add a margin at bottom when fully expanded
             $(this).parent().parent().find(".card-text-container").animate({ "height": $(this).parent().parent().find(".actual-text").height() }, 800);
             var targetDiv = $(this).parent();
             setTimeout(function () {
