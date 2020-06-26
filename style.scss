@@ -254,6 +254,14 @@ a.card-link {
         text-align: center;
         border-bottom: solid thin;
         margin-bottom: 0.25rem;
+        a {
+            color: inherit;
+            transition: 0.25s;
+            &:hover {
+                color: $sunflower;
+                text-decoration: underline;
+            }
+        }
         i {
             font-size: medium;
         }

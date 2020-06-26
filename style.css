@@ -252,6 +252,14 @@ a.card-link {
   border-bottom: solid thin;
   margin-bottom: 0.25rem;
 }
+.card.resource-card .card-title.resource-name a {
+  color: inherit;
+  transition: 0.25s;
+}
+.card.resource-card .card-title.resource-name a:hover {
+  color: #e8d82a;
+  text-decoration: underline;
+}
 .card.resource-card .card-title.resource-name i {
   font-size: medium;
 }
