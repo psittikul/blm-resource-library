@@ -253,7 +253,7 @@ a.card-link {
   margin-bottom: 0.25rem;
 }
 .card.resource-card .card-title.resource-name a {
-  color: inherit;
+  color: black;
   transition: 0.25s;
 }
 .card.resource-card .card-title.resource-name a:hover {
