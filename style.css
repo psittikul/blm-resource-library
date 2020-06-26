@@ -287,6 +287,7 @@ a.card-link {
   position: relative;
 }
 .card.resource-card .card-text-container {
+  margin-bottom: 1rem;
   overflow: hidden;
 }
 .card.resource-card .toggle-full-content {
