@@ -23,7 +23,7 @@ $curr = get_post(get_the_ID());
      * If this page/category has any associated content (i.e. the reading tips on the Educational Resources page), show it at the top
      */
     echo $curr->post_content;
-    
+
 
     $allCategories = get_categories();
     $subcategories = array();
@@ -148,20 +148,9 @@ $curr = get_post(get_the_ID());
                             ?>
                             <div class="card-meat">
                                 <div class="card-img-container">
-                                    <!-- IF THIS PARTICULAR RESOURCE HAS A TRIGGER WARNING, SHOW A LIL OVERLAY AND BLUR THUMBNAIL IMAGE -->
-                                    <?php
-                                    $tw = get_field("trigger_warnings", $resource->ID);
-                                    if (strlen(get_field("trigger_warnings", $resource->ID)) > 1) {
 
-                                    ?>
-                                        <div class="overlay trigger-warning">
-                                            <p>TW: <?php echo get_field("trigger_warnings", $resource->ID); ?></p>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?>
                                     <a href="<?php echo get_field('resource_link', $resource->ID); ?>" class="card-link" target="_blank">
-                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" style="<?php echo strlen($tw) > 1 ? '-webkit-filter: blur(6px); filter: blur(6px);' : '' ?>" alt="<?php echo $alt; ?>" />
+                                        <img class="card-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
                                     </a>
                                 </div>
                                 <div class="card-body">
@@ -173,6 +162,13 @@ $curr = get_post(get_the_ID());
                                         <div class="card-text-container">
                                             <div class="actual-text">
                                                 <?php
+
+                                                // IF THIS PARTICULAR RESOURCE HAS A TRIGGER WARNING, SHOW IT 
+
+                                                $tw = get_field("trigger_warnings", $resource->ID);
+                                                if (strlen(get_field("trigger_warnings", $resource->ID)) > 1) {
+                                                    echo "<p>TW: $tw</p>";
+                                                }
                                                 echo $resource->post_content;
                                                 ?>
 
