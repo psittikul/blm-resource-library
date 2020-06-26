@@ -167,7 +167,7 @@ $curr = get_post(get_the_ID());
 
                                                 $tw = get_field("trigger_warnings", $resource->ID);
                                                 if (strlen(get_field("trigger_warnings", $resource->ID)) > 1) {
-                                                    echo "<p>TW: $tw</p>";
+                                                    echo "<p><strong>TW: $tw</strong></p>";
                                                 }
                                                 echo $resource->post_content;
                                                 ?>
