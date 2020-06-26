@@ -31,7 +31,7 @@ get_header();
             <div class="carousel-inner">
                 <?php
                 // Go through each of the slideshow images
-                for ($i = 1; $i < 11; $i++) {
+                for ($i = 1; $i < 17; $i++) {
                     $fieldname = "slide_image_$i";
                     if (get_field($fieldname, $rid)) {
                 ?>
