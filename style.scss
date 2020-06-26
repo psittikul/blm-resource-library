@@ -365,6 +365,10 @@ ul.book-list {
 #graphicCarousel {
     .carousel-inner {
         text-align: center;
+        img {
+            max-height: 40rem;
+            width: auto;
+        }
     }
 
     .carousel-indicators {
