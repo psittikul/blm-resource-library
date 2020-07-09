@@ -17,7 +17,13 @@ get_header();
     $rid = get_the_ID();
     $resource = get_post($rid); ?>
     <h2 class="resource-post-title"><?php echo the_title(); ?></h2>
-    <p class="author-source">Author/source: <?php echo get_field("author_source", $rid); ?></p>
+    <?php
+    if (strlen(get_field("author_source", $rid)) > 1) {
+    ?>
+        <p class="author-source">Author/source: <?php echo get_field("author_source", $rid); ?></p>
+    <?php
+    }
+    ?>
     <?php
     echo $resource->post_content;
     $categories = get_the_category($rid);
