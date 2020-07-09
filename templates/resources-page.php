@@ -23,7 +23,9 @@ $curr = get_post(get_the_ID());
      * If this page/category has any associated content (i.e. the reading tips on the Educational Resources page), show it at the top
      */
     echo "<h2 class='page-title'>$curr->post_title</h2>";
-    echo $curr->post_content;
+    $content = apply_filters('the_content', $curr->post_content);
+    echo $content;
+    // echo $curr->post_content;
 
 
     $allCategories = get_categories();
@@ -170,7 +172,8 @@ $curr = get_post(get_the_ID());
                                                 // if (strlen(get_field("trigger_warnings", $resource->ID)) > 1) {
                                                 //     echo "<p><strong>TW: $tw</strong></p>";
                                                 // }
-                                                echo $resource->post_content;
+                                                echo apply_filters('the_content', $resource->post_content);
+                                                // echo $resource->post_content;
                                                 ?>
 
                                             </div>
