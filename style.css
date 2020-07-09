@@ -326,6 +326,13 @@ a.card-link {
   text-decoration: underline #e8d82a;
 }
 
+.resource-img {
+  display: flex;
+  margin: auto;
+  width: 20%;
+  margin-bottom: 1rem;
+}
+
 .author-source {
   text-align: center;
 }

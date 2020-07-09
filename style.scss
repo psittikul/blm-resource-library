@@ -347,6 +347,13 @@ a.card-link {
     text-decoration: underline $sunflower;
 }
 
+.resource-img {
+    display: flex;
+    margin: auto;
+    width: 20%;
+    margin-bottom: 1rem;
+}
+
 .author-source {
     text-align: center;
 }
