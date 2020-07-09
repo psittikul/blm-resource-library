@@ -25,7 +25,13 @@ get_header();
     }
     ?>
     <?php
-    echo $resource->post_content;
+    // Show this resource's image
+    $thumbnail_id = get_post_thumbnail_id($resource->ID);
+    $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+    ?>
+    <img class="resource-img" src="<?php echo get_the_post_thumbnail_url($resource->ID); ?>" alt="<?php echo $alt; ?>" />
+    <?php
+    echo apply_filters("the_content", $resource->post_content);
     $categories = get_the_category($rid);
     /**
      * If this post has slideshow images, set up that display
