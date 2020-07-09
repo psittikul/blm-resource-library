@@ -319,6 +319,7 @@ a.card-link {
 }
 
 /* Single resource page styles */
+.page-title,
 .resource-post-title {
   text-align: center;
   text-transform: uppercase;

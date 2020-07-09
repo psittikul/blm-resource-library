@@ -22,6 +22,7 @@ $curr = get_post(get_the_ID());
     /**
      * If this page/category has any associated content (i.e. the reading tips on the Educational Resources page), show it at the top
      */
+    echo "<h2 class='page-title'>$curr->post_title</h2>";
     echo $curr->post_content;
 
 
