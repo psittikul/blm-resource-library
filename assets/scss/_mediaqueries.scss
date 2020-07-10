@@ -34,6 +34,12 @@ TO-DO: Change menus on mobile to show current page/section or whatever
             font-size: 1rem;
         }
     }
+
+
+    // Make individual resource images on their pages full width
+    .single-resource img.resource-img {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 576px) {
