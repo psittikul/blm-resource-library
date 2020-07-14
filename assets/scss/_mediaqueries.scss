@@ -1,5 +1,5 @@
 /*
-Change card display on mobile
+Mobile
 */
 @media only screen and (max-width: 576px) {
     .card.resource-card .card-meat {
@@ -35,13 +35,18 @@ TO-DO: Change menus on mobile to show current page/section or whatever
         }
     }
 
-
     // Make individual resource images on their pages full width
     .single-resource img.resource-img {
         width: 100%;
     }
+
+    // Make infographic images fit screen
+    #graphicCarousel .carousel-inner img {
+        width: 100%;
+    }
 }
 
+// Larger screens
 @media only screen and (min-width: 576px) {
     .card.resource-card .card-meat {
         // max-height: 32rem;
@@ -63,5 +68,10 @@ TO-DO: Change menus on mobile to show current page/section or whatever
                 color: $sunflower;
             }
         }
+    }
+    // Limit height of infographic images
+    #graphicCarousel .carousel-inner img {
+        max-height: 40 rem;
+        width: auto;
     }
 }

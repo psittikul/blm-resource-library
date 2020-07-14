@@ -1,5 +1,5 @@
 /*
-Change card display on mobile
+Mobile
 */
 @media only screen and (max-width: 576px) {
   .card.resource-card .card-meat {
@@ -35,6 +35,10 @@ Change card display on mobile
   .single-resource img.resource-img {
     width: 100%;
   }
+
+  #graphicCarousel .carousel-inner img {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 576px) {
   #sideNav ul li:hover {
@@ -44,6 +48,11 @@ Change card display on mobile
   #sideNav #toggleSideNavBtn:hover {
     background: white;
     color: #e8d82a;
+  }
+
+  #graphicCarousel .carousel-inner img {
+    max-height: 40 rem;
+    width: auto;
   }
 }
 body {
@@ -372,10 +381,6 @@ ul.book-list li img {
 
 #graphicCarousel .carousel-inner {
   text-align: center;
-}
-#graphicCarousel .carousel-inner img {
-  max-height: 40rem;
-  width: auto;
 }
 #graphicCarousel .carousel-indicators {
   position: initial;
